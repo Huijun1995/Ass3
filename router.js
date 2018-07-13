@@ -1,0 +1,26 @@
+var registerUser = require('./Controller/registerUser');
+var loginn = require('./Controller/loginn');
+var logout = require('./Controller/logout');
+var updateInfo = require('./Controller/updateInfo');
+var addProducts = require('./Controller/addProducts');
+var modifyProduct = require('./Controller/modifyProduct');
+var viewUsers = require('./Controller/viewUsers');
+var viewProducts = require('./Controller/viewProducts');
+var buyProducts = require('./Controller/buyProducts');
+var productsPurchased = require('./Controller/productsPurchased');
+var getRecommendations = require('./Controller/getRecommendations');
+var check = require('./Controller/check');
+module.exports = function(app) {
+    app.post('/registerUser', (req, res) => registerUser(req, res));
+    app.post('/login', (req, res) => loginn(req, res));
+    app.post('/logout', (req, res) => logout(req, res));
+    app.post('/updateInfo', (req, res) => updateInfo(req, res));
+    app.post('/addProducts', (req, res) => addProducts(req, res));
+    app.post('/modifyProduct', (req, res) => modifyProduct(req, res));
+    app.post('/viewUsers', (req, res) => viewUsers(req, res));
+    app.post('/viewProducts', (req, res) => viewProducts(req, res));
+    app.post('/buyProducts', (req, res) => buyProducts(req, res));
+    app.post('/productsPurchased', (req, res) => productsPurchased(req, res));
+    app.post('/getRecommendations', (req, res) => getRecommendations(req, res));
+    app.get('/check', (req, res) => check(req ,res));
+};
